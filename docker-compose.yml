@@ -1,5 +1,3 @@
-
-
 services:
   db:
     image: postgres:14
@@ -13,10 +11,18 @@ services:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_HOST=${POSTGRES_HOST}
       - POSTGRES_DB=${POSTGRES_DB}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB} || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
 
-  
-  web:
+  backend:
     build: ./api
+    depends_on:
+      db:
+        condition: service_healthy
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./api:/api
@@ -27,6 +33,11 @@ services:
     environment:
       - PUID=${UID}
       - PGID=${GID}
+  
+  # frontend:
+  # frontend seervice goes here - see https://docs.docker.com/samples/react/ for react examples
+
+    
 
 volumes:
   postgres_data:
