@@ -110,6 +110,26 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# sensor_service/settings.py
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'ERROR',  # Adjust level as needed
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+        },
+    },
+}
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
