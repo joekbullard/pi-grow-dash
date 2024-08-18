@@ -4,27 +4,33 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='GrowReading',
+            name="GrowReading",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nickname', models.CharField(max_length=40)),
-                ('uid', models.CharField(max_length=16)),
-                ('timestmap', models.DateTimeField()),
-                ('temperature', models.FloatField()),
-                ('humidity', models.FloatField()),
-                ('pressure', models.FloatField()),
-                ('light', models.FloatField()),
-                ('moisture_1', models.FloatField()),
-                ('moisture_2', models.FloatField()),
-                ('voltage', models.FloatField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("nickname", models.CharField(max_length=40)),
+                ("uid", models.CharField(max_length=16)),
+                ("timestmap", models.DateTimeField()),
+                ("temperature", models.FloatField()),
+                ("humidity", models.FloatField()),
+                ("pressure", models.FloatField()),
+                ("light", models.FloatField()),
+                ("moisture_1", models.FloatField()),
+                ("moisture_2", models.FloatField()),
+                ("voltage", models.FloatField()),
             ],
         ),
     ]
