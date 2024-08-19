@@ -31,7 +31,7 @@ class Board(models.Model):
 
 
 class Reading(models.Model):
-    board = models.ForeignKey(Board, on_delete=models.CASCADE)
+    board = models.ForeignKey(Board, on_delete=models.CASCADE, related_name="readings")
     timestamp = models.DateTimeField()
     temperature = models.FloatField()
     humidity = models.FloatField()
