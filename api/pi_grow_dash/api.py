@@ -1,18 +1,49 @@
-from .models import GrowReading
+from .models import Board, Reading
 from ninja import NinjaAPI
-from ninja import Schema
+from ninja import Schema, ModelSchema
 import datetime
 import logging
 from ninja.errors import ValidationError
 from ninja.responses import Response
 from typing import List
+from ninja.security import HttpBasicAuth
+from django.contrib.auth import get_user_model
+from django.contrib.auth.hashers import check_password
+from ninja.errors import HttpError
 
 logger = logging.getLogger(__name__)
 
-api = NinjaAPI()
+api = NinjaAPI(csrf=True)
+
+User = get_user_model()
+
+class UserExistsError(Exception):
+    pass
+
+@api.exception_handler(UserExistsError)
 
 
-class ReadingsSchema(Schema):
+
+class BasicAuth(HttpBasicAuth):
+    def authenticate(self, request, username, password):
+        try:
+            user = User.objects.get(username=username)
+            # Use Django's password hashing to check the password
+            if check_password(password, user.password):
+                return user
+            else:
+                raise HttpError(401, "Incorrect password")
+        except User.DoesNotExist:
+            raise HttpError(401, "User not found")
+
+
+basic_auth = BasicAuth()
+
+    # need to add usernane validator
+
+
+class ReadingsOutSchema(Schema):
+    timestamp: datetime.datetime
     temperature: float
     humidity: float
     pressure: float
@@ -21,8 +52,8 @@ class ReadingsSchema(Schema):
     moisture_b: float
     moisture_c: float
 
-class ReadingsOutSchema(Schema):
-    timestamp: datetime.datetime
+
+class ReadingsSchema(Schema):
     temperature: float
     humidity: float
     pressure: float
@@ -39,17 +70,11 @@ class ReadingIn(Schema):
     readings: ReadingsSchema | None
 
 
-class ReadingOut(Schema):
+class BoardOut(Schema):
+    user: int
     nickname: str
     uid: str
     readings: List[ReadingsOutSchema] = None
-    # temperature: float
-    # humidity: float
-    # pressure: float
-    # luminance: float
-    # moisture_a: float
-    # moisture_b: float
-    # moisture_c: float
 
 
 def custom_validation_error_handler(request, exc: ValidationError):
@@ -68,63 +93,35 @@ def custom_validation_error_handler(request, exc: ValidationError):
 api.add_exception_handler(ValidationError, custom_validation_error_handler)
 
 
-@api.post("/readings")
-def create_reading(request, payload: ReadingIn):
-    logger.info(f"Raw Request Body: {request.body.decode('utf-8')}")
+@api.get("/boards/{board_id}", response=BoardOut)
+def list_boards(request, board_id: int):
+    board = Board.objects.get(id=board_id)
+    readings = board.readings.all()
 
-    # Log the request headers
-    logger.info(f"Request Headers: {request.headers}")
+    data = {
+        "user": board.user.id,
+        "nickname": board.nickname,
+        "uid": board.uid,
+        "readings": readings,
+    }
 
-    # Log the parsed data
-    logger.info(f"Parsed Data: {payload.dict()}")
+    return data
+
+
+@api.post("/readings", auth=basic_auth)
+def create_new_reading(request, payload: ReadingIn):
 
     try:
-        flattened_data = {
-            "nickname": payload.nickname,
-            "uid": payload.uid,
-            "timestamp": payload.timestamp,
-        }
 
-        flattened_data.update(payload.readings.dict())
+        obj, created = Board.objects.get_or_create(
+            user=request.auth, uid=payload.uid, nickname=payload.nickname
+        )
 
-        reading = GrowReading.objects.create(**flattened_data)
+        reading = Reading.objects.create(
+            board=obj, timestamp=payload.timestamp, **payload.readings.dict()
+        )
+
         return {"id": reading.id}
 
     except ValidationError as e:
-        logger.error(f"Validation Error: {e.errors()}")
         return {"error": "Invalid data", "details": e.errors()}, 422
-
-
-@api.get("/readings", response=ReadingOut)
-def list_readings(request):
-    logger.info(f"Raw Request Body: {request.body.decode('utf-8')}")
-    queryset = GrowReading.objects.all()
-
-    try:
-        reading_list = []
-        for qs in queryset:
-            reading = {
-                'timestamp': qs.timestamp,
-                "temperature": qs.temperature,
-                "humidity": qs.humidity,
-                "pressure": qs.pressure,
-                "luminance": qs.luminance,
-                "moisture_a": qs.moisture_a,
-                "moisture_b": qs.moisture_b,
-                "moisture_c": qs.moisture_c,
-            }
-
-            reading_list.append(reading)
-
-        structured_data = {
-            'nickname': queryset[0].nickname,
-            'uid': queryset[0].uid,
-            'readings': reading_list
-        }
-
-        logger.info(f'{structured_data}')
-    except ValidationError as e:
-        logger.error(f"Validation Error: {e.errors()}")
-        return {"error": "Invalid data", "details": e.errors()}, 422
-
-    return structured_data

@@ -1,0 +1,628 @@
+[
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$870000$32Zg7EMNSz1piBcEBeV1Mt$mq9lVRVpxNFw8YakAX3t8vhZkDfygBFaCF5P8XAeIrA=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "bob123",
+      "first_name": "",
+      "last_name": "",
+      "email": "joe@mail2.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-08-19T21:16:36.287Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "pi_grow_dash.board",
+    "pk": 2,
+    "fields": {
+      "user": ["bob123"],
+      "nickname": "kitchen-plants",
+      "uid": "e6614103e77d7738"
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 2,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T08:30:50Z",
+      "temperature": 20.54,
+      "humidity": 53.1,
+      "pressure": 1012.13,
+      "luminance": 576.2,
+      "moisture_a": 43.5,
+      "moisture_b": 20.67,
+      "moisture_c": 47.33
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 3,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T08:31:22Z",
+      "temperature": 21.02,
+      "humidity": 50.93,
+      "pressure": 1012.14,
+      "luminance": 11.61,
+      "moisture_a": 55.5,
+      "moisture_b": 20.83,
+      "moisture_c": 55.5
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 4,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T08:31:57Z",
+      "temperature": 21.45,
+      "humidity": 55.63,
+      "pressure": 1012.14,
+      "luminance": 17.07,
+      "moisture_a": 53.0,
+      "moisture_b": 20.5,
+      "moisture_c": 52.17
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 5,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T08:36:46Z",
+      "temperature": 24.32,
+      "humidity": 42.82,
+      "pressure": 1012.1,
+      "luminance": 274.2,
+      "moisture_a": 71.83,
+      "moisture_b": 28.67,
+      "moisture_c": 70.5
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 6,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T08:36:57Z",
+      "temperature": 24.01,
+      "humidity": 42.78,
+      "pressure": 1012.16,
+      "luminance": 513.35,
+      "moisture_a": 73.0,
+      "moisture_b": 28.83,
+      "moisture_c": 73.0
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 7,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T08:37:04Z",
+      "temperature": 23.87,
+      "humidity": 43.35,
+      "pressure": 1012.13,
+      "luminance": 402.33,
+      "moisture_a": 73.0,
+      "moisture_b": 28.67,
+      "moisture_c": 73.0
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 8,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T08:37:11Z",
+      "temperature": 23.81,
+      "humidity": 43.39,
+      "pressure": 1012.15,
+      "luminance": 214.74,
+      "moisture_a": 72.83,
+      "moisture_b": 28.67,
+      "moisture_c": 73.0
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 9,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T08:37:18Z",
+      "temperature": 23.74,
+      "humidity": 43.24,
+      "pressure": 1012.17,
+      "luminance": 405.5,
+      "moisture_a": 72.67,
+      "moisture_b": 28.67,
+      "moisture_c": 72.67
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 10,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T08:37:27Z",
+      "temperature": 23.7,
+      "humidity": 44.86,
+      "pressure": 1012.18,
+      "luminance": 325.54,
+      "moisture_a": 72.67,
+      "moisture_b": 28.67,
+      "moisture_c": 72.67
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 11,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T08:37:35Z",
+      "temperature": 23.64,
+      "humidity": 44.79,
+      "pressure": 1012.16,
+      "luminance": 320.89,
+      "moisture_a": 72.5,
+      "moisture_b": 28.67,
+      "moisture_c": 72.5
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 12,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T08:45:05Z",
+      "temperature": 20.51,
+      "humidity": 51.61,
+      "pressure": 1012.05,
+      "luminance": 568.16,
+      "moisture_a": 61.67,
+      "moisture_b": 27.17,
+      "moisture_c": 61.67
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 13,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T09:00:05Z",
+      "temperature": 20.16,
+      "humidity": 52.98,
+      "pressure": 1011.98,
+      "luminance": 394.59,
+      "moisture_a": 54.17,
+      "moisture_b": 26.5,
+      "moisture_c": 58.33
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 14,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T09:15:05Z",
+      "temperature": 20.34,
+      "humidity": 52.14,
+      "pressure": 1012.01,
+      "luminance": 200.36,
+      "moisture_a": 53.17,
+      "moisture_b": 26.33,
+      "moisture_c": 58.83
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 15,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T09:30:05Z",
+      "temperature": 20.6,
+      "humidity": 52.79,
+      "pressure": 1012.08,
+      "luminance": 301.12,
+      "moisture_a": 52.33,
+      "moisture_b": 26.33,
+      "moisture_c": 59.17
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 16,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T09:45:05Z",
+      "temperature": 20.62,
+      "humidity": 51.45,
+      "pressure": 1011.93,
+      "luminance": 478.98,
+      "moisture_a": 52.17,
+      "moisture_b": 26.33,
+      "moisture_c": 59.5
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 17,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T10:00:05Z",
+      "temperature": 20.63,
+      "humidity": 51.09,
+      "pressure": 1011.91,
+      "luminance": 505.17,
+      "moisture_a": 52.0,
+      "moisture_b": 26.67,
+      "moisture_c": 59.5
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 18,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T10:15:05Z",
+      "temperature": 20.77,
+      "humidity": 50.06,
+      "pressure": 1011.84,
+      "luminance": 344.2,
+      "moisture_a": 51.67,
+      "moisture_b": 26.67,
+      "moisture_c": 59.83
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 19,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T10:30:05Z",
+      "temperature": 20.93,
+      "humidity": 50.22,
+      "pressure": 1011.83,
+      "luminance": 356.37,
+      "moisture_a": 51.67,
+      "moisture_b": 26.67,
+      "moisture_c": 59.83
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 20,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T10:45:05Z",
+      "temperature": 20.89,
+      "humidity": 49.97,
+      "pressure": 1011.71,
+      "luminance": 352.46,
+      "moisture_a": 51.67,
+      "moisture_b": 26.67,
+      "moisture_c": 60.0
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 21,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T11:00:05Z",
+      "temperature": 20.98,
+      "humidity": 49.43,
+      "pressure": 1011.89,
+      "luminance": 539.4,
+      "moisture_a": 60.83,
+      "moisture_b": 26.5,
+      "moisture_c": 62.17
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 22,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T11:15:05Z",
+      "temperature": 21.21,
+      "humidity": 50.35,
+      "pressure": 1011.95,
+      "luminance": 423.43,
+      "moisture_a": 51.33,
+      "moisture_b": 26.5,
+      "moisture_c": 60.33
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 23,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T11:30:05Z",
+      "temperature": 21.2,
+      "humidity": 49.77,
+      "pressure": 1012.0,
+      "luminance": 408.45,
+      "moisture_a": 51.33,
+      "moisture_b": 26.5,
+      "moisture_c": 60.33
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 24,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T11:45:05Z",
+      "temperature": 21.32,
+      "humidity": 49.31,
+      "pressure": 1011.94,
+      "luminance": 843.83,
+      "moisture_a": 51.17,
+      "moisture_b": 26.67,
+      "moisture_c": 60.17
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 25,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T12:00:05Z",
+      "temperature": 21.52,
+      "humidity": 47.33,
+      "pressure": 1012.02,
+      "luminance": 416.35,
+      "moisture_a": 51.17,
+      "moisture_b": 26.67,
+      "moisture_c": 60.17
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 26,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T12:15:05Z",
+      "temperature": 21.49,
+      "humidity": 48.33,
+      "pressure": 1012.01,
+      "luminance": 344.2,
+      "moisture_a": 51.33,
+      "moisture_b": 26.83,
+      "moisture_c": 60.67
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 27,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T12:30:05Z",
+      "temperature": 21.65,
+      "humidity": 47.61,
+      "pressure": 1011.78,
+      "luminance": 424.61,
+      "moisture_a": 50.83,
+      "moisture_b": 26.67,
+      "moisture_c": 60.0
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 28,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T12:45:05Z",
+      "temperature": 21.79,
+      "humidity": 47.95,
+      "pressure": 1011.7,
+      "luminance": 691.28,
+      "moisture_a": 50.83,
+      "moisture_b": 26.83,
+      "moisture_c": 60.17
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 29,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T13:00:05Z",
+      "temperature": 21.65,
+      "humidity": 48.18,
+      "pressure": 1011.76,
+      "luminance": 852.98,
+      "moisture_a": 51.0,
+      "moisture_b": 26.83,
+      "moisture_c": 60.33
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 30,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T13:15:05Z",
+      "temperature": 21.63,
+      "humidity": 48.38,
+      "pressure": 1011.59,
+      "luminance": 367.66,
+      "moisture_a": 50.83,
+      "moisture_b": 26.83,
+      "moisture_c": 60.5
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 31,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T13:30:05Z",
+      "temperature": 21.46,
+      "humidity": 49.26,
+      "pressure": 1011.49,
+      "luminance": 385.51,
+      "moisture_a": 51.17,
+      "moisture_b": 26.83,
+      "moisture_c": 61.0
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 32,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T13:45:05Z",
+      "temperature": 21.61,
+      "humidity": 49.26,
+      "pressure": 1011.18,
+      "luminance": 703.53,
+      "moisture_a": 51.17,
+      "moisture_b": 27.0,
+      "moisture_c": 61.0
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 33,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T14:00:05Z",
+      "temperature": 22.25,
+      "humidity": 47.63,
+      "pressure": 1010.99,
+      "luminance": 709.14,
+      "moisture_a": 50.33,
+      "moisture_b": 26.83,
+      "moisture_c": 60.17
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 34,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T14:15:05Z",
+      "temperature": 22.0,
+      "humidity": 48.38,
+      "pressure": 1010.84,
+      "luminance": 361.32,
+      "moisture_a": 50.33,
+      "moisture_b": 26.83,
+      "moisture_c": 60.33
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 35,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T14:30:05Z",
+      "temperature": 21.9,
+      "humidity": 48.24,
+      "pressure": 1010.71,
+      "luminance": 897.24,
+      "moisture_a": 50.5,
+      "moisture_b": 27.0,
+      "moisture_c": 60.67
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 36,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T14:45:05Z",
+      "temperature": 21.79,
+      "humidity": 48.34,
+      "pressure": 1010.52,
+      "luminance": 304.29,
+      "moisture_a": 50.5,
+      "moisture_b": 27.0,
+      "moisture_c": 61.0
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 37,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T15:00:05Z",
+      "temperature": 21.68,
+      "humidity": 49.02,
+      "pressure": 1010.5,
+      "luminance": 282.53,
+      "moisture_a": 51.0,
+      "moisture_b": 27.0,
+      "moisture_c": 61.67
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 38,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T15:15:05Z",
+      "temperature": 21.75,
+      "humidity": 49.63,
+      "pressure": 1010.34,
+      "luminance": 171.0,
+      "moisture_a": 50.83,
+      "moisture_b": 26.83,
+      "moisture_c": 61.67
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 39,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T15:30:05Z",
+      "temperature": 21.64,
+      "humidity": 51.42,
+      "pressure": 1010.15,
+      "luminance": 284.75,
+      "moisture_a": 50.67,
+      "moisture_b": 27.0,
+      "moisture_c": 61.83
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 40,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T15:45:05Z",
+      "temperature": 21.61,
+      "humidity": 50.33,
+      "pressure": 1010.05,
+      "luminance": 133.08,
+      "moisture_a": 51.0,
+      "moisture_b": 27.0,
+      "moisture_c": 61.83
+    }
+  },
+  {
+    "model": "pi_grow_dash.reading",
+    "pk": 41,
+    "fields": {
+      "board": 2,
+      "timestamp": "2024-08-21T16:00:05Z",
+      "temperature": 21.63,
+      "humidity": 51.5,
+      "pressure": 1009.85,
+      "luminance": 228.24,
+      "moisture_a": 51.33,
+      "moisture_b": 27.17,
+      "moisture_c": 62.5
+    }
+  }
+]
